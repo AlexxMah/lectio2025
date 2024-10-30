@@ -1,0 +1,75 @@
+@tailwind base;
+
+::-webkit-scrollbar {
+  background-color: #ffffff00;
+  border-radius: 10px;
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: hsl(var(--bc));
+  border-radius: 10px;
+  width: 10px;
+  height: 10px;
+}
+
+/*on phones: disable the scrollbars*/
+
+@media (max-width: 640px) {
+  ::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@tailwind components;
+@tailwind utilities;
+
+.list {
+  @apply overflow-y-scroll rounded-lg bg-base-200 p-4 pb-0;
+}
+
+.element {
+  @apply mb-4 rounded-lg bg-base-300 p-4;
+}
+
+.heading {
+  @apply mb-4 text-3xl font-bold;
+}
+
+.btn {
+  @apply normal-case;
+  @apply leading-4;
+}
+
+.checkbox {
+  @apply bg-transparent;
+}
+
+/* Calender outline */
+.school-schedule .ec-header,
+.school-schedule .ec-all-day,
+.school-schedule .ec-body,
+.school-schedule .ec-days,
+.school-schedule .ec-toolbar,
+.school-schedule .ec-day {
+  border-color: hsl(var(--bc) / var(--tw-bg-opacity));
+  --tw-bg-opacity: 0.1;
+}
+
+.school-schedule .ec-header .ec-days>.ec-day {
+  text-transform: capitalize;
+}
+
+.school-schedule .ec-event-title {
+  white-space: nowrap;
+}
+
+@media (prefers-reduced-motion) {
+
+  ::view-transition-group(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*) {
+    animation: none !important;
+  }
+}
